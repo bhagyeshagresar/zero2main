@@ -10,9 +10,13 @@ _stack = _eram; /* stack starts at the end of RAM and grows downward */
 
 SECTIONS
 {
+    .ivt 0x08000000 : ALIGN(4)
+    {
+        KEEP(*(.ivt))
+    } > flash
+
     .text : ALIGN(4)
     {
-        KEEP(*(.ivt)) /* Interrupt vector table */
         *(.text*)
         . = ALIGN(4);
         _etext = .;

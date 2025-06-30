@@ -21,7 +21,10 @@ void isr_hardfault(void){
 }
 
 
-#define IVT_ARRAY_SIZE 48
+#define IVT_ARRAY_SIZE (48U)
+
+// typedef return_type (*alias_name)(parameter_types);
+//
 typedef void (*isr_t)(void);
 __attribute((used, section(".ivt"))) //we need to place this table at the start of flash memory in linker script. Set it to "used" to prevent the compiler from optimizing
 static const isr_t ivt[IVT_ARRAY_SIZE]=

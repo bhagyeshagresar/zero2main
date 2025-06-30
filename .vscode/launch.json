@@ -1,10 +1,11 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Debug STM32F401RE",
             "cwd": "${workspaceFolder}",
-            "executable": "${workspaceFolder}/myprogram.elf",
+            "executable": "${workspaceFolder}/myProgram.elf",
             "request": "launch",
             "type": "cortex-debug",
             "runToEntryPoint": "main",
@@ -16,11 +17,11 @@
                 "target/stm32f4x.cfg"
             ],
             "preLaunchCommands": [
-                "monitor reset halt",
-                "load",
-                "monitor reset init"
+                "monitor program ${workspaceFolder}/myProgram.elf verify reset"
             ],
-            "internalConsoleOptions": "openOnSessionStart"
+            "internalConsoleOptions": "neverOpen",
         }
     ]
+
+    
 }

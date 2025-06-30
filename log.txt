@@ -1,0 +1,4 @@
+
+June 29th:
+problem I am facing currenttly: cannot get debugger to break at isr_reset
+
