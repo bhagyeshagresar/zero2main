@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug STM32F401RE",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/myprogram.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "device": "STM32F401RE",
+            "servertype": "openocd",
+            "gdbPath": "gdb-multiarch",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f4x.cfg"
+            ],
+            "preLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset init"
+            ],
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}
