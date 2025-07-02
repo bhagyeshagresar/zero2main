@@ -2,6 +2,9 @@
 # Zero2Main
 
 A from-scratch walkthrough for understanding the embedded build process and how code reaches `main()` on a bare-metal ARM system.
+This project was implemented for STM32F401RE MCU. Nothing in this project is particularly new. This was just a small learning project for me to
+understand what happens when code excution gets to main(). Thanks Artful Bytes for helping me understand this process.
+
 References : https://github.com/artfulbytes/how_a_microcontroller_starts_video
 ---
 

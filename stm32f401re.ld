@@ -21,4 +21,28 @@ SECTIONS
         . = ALIGN(4);
         _etext = .;
     } > flash
+
+
+     /* Initial (constant) values for data is placed in flash after the program code */
+    _idata = LOADADDR(.data);
+
+    .data : ALIGN(4)
+    {
+        _data = .;
+        *(.data*)
+        . = ALIGN(4);
+        _edata = .;
+    } > ram AT > flash
+
+    .bss : ALIGN(4)
+    {
+        _bss = .;
+        *(.bss*)
+        . = ALIGN(4);
+        _ebss = .;
+        PROVIDE(_end = .);
+    } > ram
+
+
+
 }
